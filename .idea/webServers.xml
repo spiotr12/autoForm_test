@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="eac27f09-d503-43df-8da7-a0b3e622d052" name="AWS_Meteor" url="http://ec2-52-30-45-18.eu-west-1.compute.amazonaws.com:3000">
+        <fileTransfer host="ec2-52-30-45-18.eu-west-1.compute.amazonaws.com" port="22" privateKey="C:\Users\Piotrek\Dropbox\Applications Settings\UbuntuMeteor.pem" rootFolder="/home/ubuntu/MeteorApps/autoForm_test" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
