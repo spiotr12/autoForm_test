@@ -20,13 +20,18 @@ shell-server@0.2.1            # Server-side component of the `meteor shell` comm
 
 autopublish@1.0.7             # Publish all data to the clients (for prototyping)
 insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
+
 aldeed:simple-schema
 aldeed:collection2
 aldeed:autoform
+
 accounts-password
 useraccounts:core
 useraccounts:bootstrap
-huttonr:bootstrap3
+useraccounts:flow-routing
+
 kadira:flow-router
 kadira:blaze-layout
-useraccounts:flow-routing
+
+huttonr:bootstrap3
+

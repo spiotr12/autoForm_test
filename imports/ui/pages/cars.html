@@ -1,0 +1,26 @@
+<template name="cars_page">
+    {{> insert_car }}
+    <hr>
+    {{> cars_list }}
+</template>
+
+<template name="insert_car">
+    <h2>AutoForm</h2>
+    {{#autoForm collection=carsCollection id="InserCar" type="insert"}}
+        {{> afQuickField name="make"}}
+        {{> afQuickField name="model"}}
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" disabled="{{disableButtons}}">Submit</button>
+        </div>
+    {{/autoForm}}
+    <hr>
+    <h2>QuickForm</h2>
+    {{> quickForm collection=carsCollection id="InserCar" type="insert"}}
+</template>
+
+<template name="cars_list">
+    <h3>Car list</h3>
+    {{#each getCars }}
+        {{ make}} - {{ model}} <br>
+    {{/each}}
+</template>

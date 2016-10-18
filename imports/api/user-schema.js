@@ -1,37 +1,24 @@
-var Schemas = {};
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+
+let Schemas = {};
 
 Schemas.UserProfile = new SimpleSchema({
 	firstName: {
+		label: 'First Name',
 		type: String,
 		regEx: /^[a-zA-Z-]{2,25}$/,
 		optional: true
 	},
-	lastName: {
-		type: String,
-		regEx: /^[a-zA-Z]{2,25}$/,
-		optional: true
-	},
-	birthday: {
-		type: Date,
-		optional: true
-	},
-	website: {
-		type: String,
-		regEx: SimpleSchema.RegEx.Url,
-		optional: true
-	},
-	bio: {
-		type: String,
-		optional: true
-	}
 });
 
 Schemas.User = new SimpleSchema({
 	username: {
+		label: 'User name',
 		type: String,
 		regEx: /^[a-z0-9A-Z_]{3,15}$/
 	},
 	emails: {
+		label: 'Email',
 		type: [Object],
 		optional: true
 	},
@@ -43,23 +30,23 @@ Schemas.User = new SimpleSchema({
 		type: Boolean
 	},
 	createdAt: {
-		type: Date
+		label: 'Create at',
+		type: Date,
+		optional: true
 	},
 	profile: {
+		label: 'Profile details',
 		type: Schemas.UserProfile,
 		optional: true
 	},
-	services: {
-		type: Object,
-		optional: true,
-		blackbox: true
-	}
 });
-Meteor.users.attachSchema(Schemas.User);
 
+// Meteor.users.attachSchema(Schemas.User);
 
-Meteor.users.allow({
-	insert: function () { return true; },
-	update: function () { return true; },
-	remove: function () { return true; }
-});
+// Meteor.users.allow({
+// 	insert: function () { return true; },
+// 	update: function () { return true; },
+// 	remove: function () { return true; }
+// });
+
+export const UsersSchema = Schemas.User;
